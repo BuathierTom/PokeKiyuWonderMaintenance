@@ -1,0 +1,142 @@
+
+#idProfilPokemon{
+    width: 70%;
+    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+}
+
+#crossProfilPokemon{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 100px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+#crossProfilPokemon p{
+    margin: 0px;
+    margin-top: 6px;
+}
+
+.block1 img{
+    width: 30%;
+    margin-left: 10%;
+    display: inline;
+}
+
+.block1{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+#idDivStats{
+    margin-left: 15%;
+    width: 50%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.labelStat{
+    width: 100px;
+    height: 25px;
+    margin-right: 50px;
+}
+
+.classStat{
+    align-items: center;
+    display: flex;
+}
+
+.classStat p{
+    display: inline-block;
+}
+.jaugeStat{
+    display: inline-block;
+    border-radius: 20px;
+    width: 50%;
+    height: 30px;
+}
+.jaugeStat p{
+    margin-top: 2px;
+    color: azure;
+    font-size: 20px;
+}
+
+#buttonTeam button{
+ margin-left: 10px;
+ margin-right: 10px;
+ margin-bottom: 20px;
+}
+
+#block2{
+    margin-bottom: 50px;
+}
+
+#idTableResistance{
+    width: 80%;
+    display: inline-block;
+    align-items: center;
+}
+
+.divTypesResistance{
+    width: 5%;
+    display: inline-block;
+}
+
+.divResistanceLabel{
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.resistanceLabel{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profilTypesPokemon{
+    height: 100%;
+    align-items: center;
+    display: inline-block;
+}
+
+.profilTypePokemon{
+    display: inline-block;
+}
+
+.profilTypePokemon img{
+    width: 40px;
+    height: 40px;
+}
+
+
+#preEvolutionDiv{
+    width: 20%;
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#evolutionDiv{
+    width: 20%;
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.pokemonCaseDivProdile{
+    display: inline-block;
+}

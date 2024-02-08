@@ -1,0 +1,44 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+h1[id="team"]{
+  font-family: 'Pokemon Solid', sans-serif;
+  text-align: center;
+  font-size: 2vw;
+  margin-top: -10px;
+  margin-bottom: 0%;
+}
+
+.pokemon-images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .empty-case {
+      border: none;
+      width: 90px;
+  }
+  
+  .small-image {
+    width: 100px;
+  }
+  
+  .img-type {
+      width: 40px;
+  }
+  
+  .type-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .result-img{
+    width: 50px;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }

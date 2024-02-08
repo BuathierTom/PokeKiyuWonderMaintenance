@@ -1,0 +1,39 @@
+.pokemon-images {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.empty-case {
+    border: none;
+    width: 90px;
+}
+
+.small-image {
+  width: 100px;
+}
+
+.img-type {
+    width: 40px;
+}
+
+.type-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.result-img{
+  width: 50px;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  width: 100px;
+}
+
+.calculResistanceTypes p{
+  font-size: 25px;
+}

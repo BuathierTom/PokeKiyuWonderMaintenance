@@ -1,0 +1,96 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+/* -- CSS sur la pokeball --- */
+
+/* Pokeball / Pokeball à la posiition de base */
+.before-button-main {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  z-index: 2;
+}
+
+/* Permet à l'image de la pokeball de revenir à droite de l'écran */
+.after-button-main {
+  transition: transform 0.3s ease;
+}
+
+/* Permet à la pokeball d'aller vers la gauche de l'écran */
+.open-button-main {
+  transform: translateX(-500%); /* Décalage vers la gauche lorsque le menu est ouvert */
+  transition: transform 0.3s ease; /* Animation de transition */
+}
+
+.pokeball-img{
+  width: 70px;
+}
+
+/* -- CSS sur la div du conteneur -- */
+
+/* Menu de base */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgb(255, 245, 60);
+  z-index: 1;
+  transition: width 0.25s ease; /* Transition à l'aller et au retour */
+
+  justify-content: center;
+}
+
+.main-container h1{
+  margin-left: 10px;
+  color: black;
+}
+
+.main-container h1:hover{
+  color: rgb(240, 110, 110);
+}
+
+/* Menu lorsqu'on a appuyé sur la pokeball */
+.open-main {
+  width: 451px;
+}
+
+/* -- CSS pour le contenu de la barre latéral -- */
+
+h1[id="h1_bar"] {
+  font-family: 'Pokemon Solid', sans-serif;
+  text-align: center;
+}
+
+.Motisma {
+  width: 300px;
+  margin-left: 80px;
+  border-radius: 20px;
+}
+
+.TeamRed {
+  margin: 5px;
+  width: 440px;
+  border-radius: 20px;
+}
+
+@keyframes colorFade {
+  0% {
+    background-color: rgb(255, 245, 60); /* couleur de départ */
+  }
+  100% {
+    background-color: rgb(240, 110, 110); /* couleur d'arrivée */
+  }
+}
+
+.animate-button:hover {
+  animation: colorFade 0.5s infinite alternate;
+}
+
+a {
+  text-decoration: none;
+}
