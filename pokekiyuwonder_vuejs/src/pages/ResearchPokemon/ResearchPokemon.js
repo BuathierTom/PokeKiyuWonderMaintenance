@@ -31,11 +31,14 @@ export default {
                 catch (error) {
                     console.error('Une erreur s\'est produite lors de la récupération des données Pokémon', error);
                 }
+                this.isLoading = true;
             }
 
             else {
                 this.isLoading = true;
             }
+
+                        
 
         },
         // Gestion du click PokemonProfil Pour cacher la barre de recherche
