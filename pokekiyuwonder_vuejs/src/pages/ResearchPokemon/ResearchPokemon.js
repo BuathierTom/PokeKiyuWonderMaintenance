@@ -10,9 +10,11 @@ export default {
             isLoading : false
         };
     },
+
     mounted() {
         this.fetchPokemonData();
     },
+
     methods: {
         // Récupération du terme de recherche
         handleSearch(term) {
@@ -25,12 +27,16 @@ export default {
                     const response = await axios.get('https://pokebuildapi.fr/api/v1/pokemon');
                     const parsed = JSON.stringify(response.data);
                     localStorage.setItem('listPokemon', parsed);
-                    
                 }
                 catch (error) {
                     console.error('Une erreur s\'est produite lors de la récupération des données Pokémon', error);
                 }
             }
+
+            else {
+                this.isLoading = true;
+            }
+
         },
         // Gestion du click PokemonProfil Pour cacher la barre de recherche
         clickPokemonProfilEmit(){
