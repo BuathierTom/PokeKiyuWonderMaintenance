@@ -52,17 +52,23 @@ export default {
 
         // Renvoie si on est à la premier page
         isFirstPage(){
-            return this.page === 0;
-        },
-
-        // Renvoie si on est à la derniere page
-        isLastPage(){
-            if (this.listPokemonView.length <= 15){
+            if (this.page == 0){
                 return true;
             }
             else{
                 return false;
             }
+        },
+
+        // Renvoie si on est à la derniere page
+        isLastPage(){
+            if (this.listPokemonView.length <= (this.page + 1) * 15){
+                return true;
+            }
+            else{
+                return false;
+            }
+
         },
 
         // Affecte a la variable seletedPokemon un pokemon en parametre
