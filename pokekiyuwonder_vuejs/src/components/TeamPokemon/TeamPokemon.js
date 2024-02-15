@@ -14,17 +14,32 @@ export default {
   },
 
   methods: {
-    fillTeam() {
+    fillTeam1() {
       // on recupere la team en cours
-      let team = JSON.parse(localStorage.getItem(this.team));
+      let team1 = JSON.parse(localStorage.getItem(this.team));
       // on recupere tout les pokemons
       let listPokemon = JSON.parse(localStorage.getItem("listPokemon"));
 
-      while (team.length < 6) {
+      while (team1.length < 6) {
         let random = Math.floor(Math.random() * listPokemon.length);
-        team.push(listPokemon[random]);
+        team1.push(listPokemon[random]);
       }
-      localStorage.setItem(this.team, JSON.stringify(team));
+      localStorage.setItem(this.team, JSON.stringify(team1));
+      location.reload();
+
+    },
+
+    fillTeam2() {
+      // on recupere la team en cours
+      let team2 = JSON.parse(localStorage.getItem(this.team));
+      // on recupere tout les pokemons
+      let listPokemon = JSON.parse(localStorage.getItem("listPokemon"));
+
+      while (team2.length < 6) {
+        let random = Math.floor(Math.random() * listPokemon.length);
+        team2.push(listPokemon[random]);
+      }
+      localStorage.setItem(this.team, JSON.stringify(team2));
       location.reload();
 
     }
