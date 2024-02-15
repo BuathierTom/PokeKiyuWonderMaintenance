@@ -1,5 +1,6 @@
 <template>
-
+  <div>
+    <button @click="fillTeam">Remplir l'équipe</button>
     <h1 id="team" v-if="team === 'team1'">Team 1</h1>
 
     <div>
@@ -28,6 +29,7 @@
     </div>
 
     <h1 id="team" v-if="team === 'team2'">Team 2</h1>
+  </div>
 
   </template>
   
