@@ -1,7 +1,8 @@
 <template>
+  <div>
+    <button v-if="team1.length == 0 && team2.length == 0 " @click="generateRandomTeam">Générer une équipe aléatoire</button>
 
     <h1 id="team" v-if="team === 'team1'">Team 1</h1>
-
     <div>
       <table v-if="team === 'team1'" class="type-table">
         <thead>
@@ -26,11 +27,10 @@
         </thead>
       </table>
     </div>
-
     <h1 id="team" v-if="team === 'team2'">Team 2</h1>
+  </div>
+</template>
 
-  </template>
-  
-  <script src="./TeamPokemon.js"></script>
-  <style src="./TeamPokemon.css"></style>
-  
+<script src="./TeamPokemon.js"></script>
+<style src="./TeamPokemon.css"></style>
+
