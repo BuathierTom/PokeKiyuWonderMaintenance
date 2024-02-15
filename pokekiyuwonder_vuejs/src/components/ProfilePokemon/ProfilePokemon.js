@@ -107,31 +107,37 @@ export default {
     // Ajout a l'équipe mise en paramétre sinon renvoie une une erreur car l'équipe est complete 
     addTeam(team){
         var equipe = JSON.parse(localStorage.getItem(team));
-
-        // Si elle est vide il va en crée une  dans le localStorage
-        if(!equipe){
-            equipe = [this.pokemonData];
-            localStorage.setItem(team, JSON.stringify(equipe));
-
+    
+        // Vérifier si l'équipe existe déjà dans le localStorage
+        if (!equipe) {
+            equipe = [];
         }
-        else{
-
-            // Si l'équipe n'est la pleine il l'ajoute sinon il renvoie une pop up d'erreur
-            if(equipe.length < 6){
-                equipe.push(this.pokemonData);
-                localStorage.setItem(team, JSON.stringify(equipe));
-
-            }
-            else{
-                Swal.fire({
-                    title: 'Erreur!',
-                    text: 'Vous avez déja 6 pokémons dans votre équipe',
-                    icon: 'error',
-                    confirmButtonText: 'Quitter'
-                })
-            }
-            
+    
+        // Vérifier si l'équipe est pleine (limite de 6 Pokémon par équipe)
+        if (equipe.length >= 6) {
+            Swal.fire({
+                title: 'Erreur!',
+                text: 'Vous avez déjà 6 pokémons dans votre équipe',
+                icon: 'error',
+                confirmButtonText: 'Quitter'
+            });
+            return; // Arrêter l'exécution de la méthode si l'équipe est pleine
         }
+    
+        // Vérifier si le Pokémon est déjà dans l'équipe
+        if (this.isTeam(team)) {
+            Swal.fire({
+                title: 'Erreur!',
+                text: 'Ce pokémon est déjà dans votre équipe',
+                icon: 'error',
+                confirmButtonText: 'Quitter'
+            });
+            return; // Arrêter l'exécution de la méthode si le Pokémon est déjà dans l'équipe
+        }
+    
+        // Ajouter le Pokémon à l'équipe
+        equipe.push(this.pokemonData);
+        localStorage.setItem(team, JSON.stringify(equipe));
     },
 
     // Retire de l'équipe le Pokémon et supprime l'équipe du localStorage si elle est vide
@@ -156,29 +162,15 @@ export default {
     },
 
     // Fonction qui renvoie si le pokémon est dans l'équipe mise en paramétre
-    async isTeam(team){
+    isTeam(team) {
+        // Vérifier si l'équipe existe dans le localStorage
         var equipe = JSON.parse(localStorage.getItem(team));
-        var dontFindPokemon = true;
-
-        // Si l'équipe existe il va vérifie chaque élément de la liste pour vérifié le nom
-        if(equipe){
-            equipe.forEach(element => {
-                if(element.name === this.pokemonData.name){
-                    dontFindPokemon = false;
-                }   
-            });
+        if (!equipe) {
+            return false; // L'équipe n'existe pas, donc le Pokémon ne peut pas être dedans
         }
-        else{
-            return false;
-        }
-
-        // On renvoie si le pokémon est dans l'équipe ou non
-        if(dontFindPokemon){
-            return false;
-        }
-        else{
-            return true;
-        }
+    
+        // Vérifier si le Pokémon est déjà dans l'équipe
+        return equipe.some(pokemon => pokemon.id === this.pokemonData.id);
     }
 
 
