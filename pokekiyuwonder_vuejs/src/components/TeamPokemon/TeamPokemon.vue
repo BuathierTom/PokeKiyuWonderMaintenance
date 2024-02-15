@@ -32,7 +32,6 @@
       <h1 id="team" v-if="team === 'team2'">Team 2</h1>
 
     </div>
-    <h1 id="team" v-if="team === 'team2'">Team 2</h1>
   </div>
 </template>
 
