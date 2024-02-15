@@ -106,12 +106,12 @@
         <div id="buttonTeam">
 
             <!-- L'équipe 1 -->
-            <button v-if="isTeam('team1')" id="buttonAddTeam1" @click="addTeam('team1'), $emit('clickPokemon')">Ajouter a l'équipe 1</button>
+            <button v-if="!isTeam('team1')" id="buttonAddTeam1" @click="addTeam('team1'), $emit('clickPokemon')">Ajouter a l'équipe 1</button>
             <button v-if="isTeam('team1')" id="buttonAddTeam1" @click="removeTeam('team1'), $emit('clickPokemon')">Retirer de l'équipe 1</button>
                 
             <!-- L'équipe 2 -->
-            <button v-if="isTeam('team2')" id="buttonAddTeam2" @click="addTeam('team2'), $emit('clickPokemon')">Ajouter a l'équipe 2</button>
-            <button v-if="isTeam('team2')" id="buttonAddTeam1" @click="removeTeam('team2'), $emit('clickPokemon')">Retirer de l'équipe 2</button>
+            <button v-if="!isTeam('team2')" id="buttonAddTeam2" @click="addTeam('team2'), $emit('clickPokemon')">Ajouter a l'équipe 2</button>
+            <button v-if="isTeam('team2')" id="buttonAddTeam2" @click="removeTeam('team2'), $emit('clickPokemon')">Retirer de l'équipe 2</button>
         </div>
 
     </div>
