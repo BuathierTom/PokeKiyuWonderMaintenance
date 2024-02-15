@@ -7,7 +7,7 @@ export default {
             searchTerm: '',
             team: [],
             hidden : null,
-            isLoading : false
+            isLoading : true,
         };
     },
     mounted() {
