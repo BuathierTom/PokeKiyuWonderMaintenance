@@ -102,7 +102,7 @@
 
         </div>
         
-        <!-- Le block des boutons pour ajouter ou retirer des équipe -->
+        <!-- Le block des boutons pour ajouter ou retirer des équipes -->
         <div id="buttonTeam">
 
             <!-- L'équipe 1 -->

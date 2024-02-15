@@ -47,6 +47,7 @@ export default {
         // Modifie la page actuel en additionnant ou soustraiant un nombre
         changePage(numberPage){
             this.page += numberPage;
+                
         },
 
         // Renvoie si on est à la premier page
@@ -56,7 +57,12 @@ export default {
 
         // Renvoie si on est à la derniere page
         isLastPage(){
-            return this.page === this.listPokemonView.length;
+            if (this.listPokemonView.length <= 15){
+                return true;
+            }
+            else{
+                return false;
+            }
         },
 
         // Affecte a la variable seletedPokemon un pokemon en parametre
